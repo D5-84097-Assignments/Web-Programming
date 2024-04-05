@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>Assignment 5</title>
+    </head>
+    <body>
+        <div id="car" style="position: absolute;height: 100px;width: 10px;top: 70px;left: -39px;">
+            <img src="car.jpg" style="height: 110px;">
+        </div>
+        <div style="background-color: black;width: 600px;height: 40px;position: absolute;top: 150px;left: -8px;">
+        </div>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+
+        <input type="button" value="move" onclick="move()">
+        <input type="button" value="stop" onclick="stop()">
+    
+        <script>
+            debugger;
+            var letftPosition = -39;
+            var topPosition = 70;
+            var arrOfQueues = new Array();
+            function move()
+            {
+                console.log("move");
+                var qNo = setInterval(keepMoving, 10);
+                arrOfQueues.push(qNo);
+            }
+
+            function stop()
+            {
+                for(var i=0; i < arrOfQueues.length; i++)
+                {
+                    var qToStop = arrOfQueues[i];
+                    clearInterval(qToStop);
+                }
+            }
+
+            function keepMoving()
+            {
+                var refCar = document.getElementById("car");
+                if(letftPosition < 560 && refCar != null)
+                {   
+                    letftPosition = letftPosition + 1;
+                    refCar.style.left = letftPosition + "px";
+                                        
+                }
+                else if(topPosition < 200 && refCar != null)
+                {  
+                    topPosition = topPosition + 1;
+                    refCar.style.top = topPosition + "px";
+                }
+            }           
+            
+        </script>
+    </body>
+</html>
