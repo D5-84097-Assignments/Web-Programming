@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <title>Assignment 4</title>
+    </head>
+    <body>
+        <center>
+            <table style="text-align: center;vertical-align: middle;"> 
+                <tr style="height: 100px;">
+                    <td colspan="2" style="width: 200px;"><h4>Enter Number 1</h4></td>
+                    <td colspan="2" style="width: 200px;">
+                        <input type="number" name="Number" id="num1">
+                    </td>
+                    <td>
+                        <div>
+                            <div id="num1ErrorMessage" style="color: red;">
+                        </div>
+                    </td>
+                </tr>
+
+                <tr style="height: 100px;">
+                    <td colspan="2" style="width: 200px;"><h4>Enter Number 2</h4></td>
+                    <td colspan="2" style="width: 200px;">
+                        <input type="number" name="Number" id="num2">
+                    </td>
+                    <td>
+                        <div>
+                            <div id="num2ErrorMessage" style="color: red;">
+                        </div>
+                    </td>
+                </tr>
+
+                <tr style="height: 100px;">
+                    <td colspan="2" style="width: 200px;"><h4>Result</h4></td>
+                    <td colspan="2" style="width: 200px;">
+                        <div id="result" style="border: 1px solid black; height: 20px;"></div>
+                    </td>
+                    <td>
+                        <div>
+                            <div id="resultErrorMessage" style="color: red;">
+                        </div>
+                    </td>
+                </tr>
+                <tr></tr><tr></tr><tr></tr>
+                <tr style="height: 100px;">
+                    <td>
+                        <input type="button" value="Addition" onclick="add()">
+                    </td>
+                    <td>
+                        <input type="button" value="Subtraction" onclick="sub()">
+                    </td>
+                    <td>
+                        <input type="button" value="Multiplication" onclick="multi()">
+                    </td>
+                    <td>
+                        <input type="button" value="Division" onclick="divi()">
+                    </td>
+                </tr>
+            </table>
+        </center>
+
+        <script src="Assignment4.js"></script>
+        <script>
+            function isEmpty(n, error)
+            {
+                var empty = true;
+                if (n != "")
+                {
+                    error.innerText = "";
+
+                    return false;
+                }
+                else
+                {
+                    error.innerText = "Please Enter value";
+                    return true;
+                }                
+           }
+        
+           add();
+           sub();
+           multi();
+           divid();
+
+            
+        </script>
+    </body>
+</html>
